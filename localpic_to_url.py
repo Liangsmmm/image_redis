@@ -34,7 +34,7 @@ def pic_to_bytes(path, url_name):
     return res
     '''
     cache.set("photoPic_{}".format(url_name), res, timeout=60 * 10)
-    url = "http:121.48.165.66:12345/avatardownload/photoPic_{}/".format(url_name)
+    url = "http:*.*.*.*:port/avatardownload/photoPic_{}/".format(url_name)
     return url
     '''
 
@@ -61,13 +61,11 @@ def make_pic_url(img_path, url_name):
     res_pic =  out.getvalue()
     #cache.set("photoPic_{}".format(url_name), image, timeout=60 * 10)
     cache.set("photoPic_{}".format(url_name), res_pic, timeout=60 * 10)
-    url = "http:121.48.165.66:12345/avatardownload/photoPic_{}/".format(url_name)
+    url = "http:*.*.*.*:port/avatardownload/photoPic_{}/".format(url_name)
     return url
 
 
 
 if __name__ == "__main__":
-    #url = make_pic_url('/home/csis/data/projects/detect/detect2/detect/det_pics/warn_pics/2019-06-27-16-06-57.jpg','a')
-    #url = pic_to_bytes('/home/csis/data/projects/detect/detect2/detect/det_pics/warn_pics/2019-06-27-16-06-57.jpg','a')
-    url = pic_to_bytes('/home/csis/data/projects/detect/detect2/detect/det_pics/warn_pics/2018-06-27-16-06-57.jpg','a')
+    url = pic_to_bytes('2018-06-27-16-06-57.jpg','a')
     print(url)
