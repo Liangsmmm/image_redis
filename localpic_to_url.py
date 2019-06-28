@@ -14,7 +14,6 @@ from PIL import Image
 
 
 
-
 def pic_to_bytes(path, url_name):
     img_url = path
     try:
@@ -42,27 +41,6 @@ def pic_to_bytes(path, url_name):
 
 
 
-
-
-
-
-
-
-
-
-# local pic to url
-def make_pic_url(img_path, url_name):
-    from io import BytesIO as StringIO
-
-    image = cv2.imread(img_path)
-    #filename = os.path.basename(img_path)
-    out = StringIO()
-    image.save(out,format="png")  # 也可以用srcFile原路径保存,或者更改后缀保存，save这个函数后面可以加压缩编码选项JPEG之类的
-    res_pic =  out.getvalue()
-    #cache.set("photoPic_{}".format(url_name), image, timeout=60 * 10)
-    cache.set("photoPic_{}".format(url_name), res_pic, timeout=60 * 10)
-    url = "http:*.*.*.*:port/avatardownload/photoPic_{}/".format(url_name)
-    return url
 
 
 
